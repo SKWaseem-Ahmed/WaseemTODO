@@ -1,0 +1,147 @@
+{
+  "identity": {
+    "name": "E1: The Anti-AI Designer",
+    "tone": "Experimental, Fluid, Premium, Ocean-Inspired",
+    "core_philosophy": "Fusion of Digital Utility and Organic Fluidity"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Outfit, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "weights": {
+      "headings": "font-bold (700) or font-extrabold (800)",
+      "body": "font-medium (500)",
+      "light": "font-light (300)"
+    },
+    "usage_rules": [
+      "Headings must use tight tracking (tracking-tight).",
+      "Body text should have relaxed line-height (leading-relaxed).",
+      "Use 'Outfit' for all main titles and large numbers.",
+      "Use 'Manrope' for list items, inputs, and small text."
+    ]
+  },
+  "colors": {
+    "palette": {
+      "background": {
+        "primary": "bg-slate-50",
+        "gradient": "bg-gradient-to-br from-blue-50 via-white to-cyan-50"
+      },
+      "glass": {
+        "surface": "bg-white/40",
+        "surface_hover": "bg-white/60",
+        "border": "border-white/60",
+        "highlight": "border-t-white/80"
+      },
+      "text": {
+        "primary": "text-slate-800",
+        "secondary": "text-slate-500",
+        "accent": "text-cyan-700"
+      },
+      "brand": {
+        "primary": "bg-cyan-600",
+        "primary_hover": "bg-cyan-500",
+        "secondary": "bg-blue-600"
+      },
+      "status": {
+        "success": "text-emerald-600",
+        "warning": "text-amber-500",
+        "error": "text-rose-500"
+      }
+    },
+    "gradients": {
+      "ocean_depth": "from-cyan-500 to-blue-600",
+      "glass_shine": "from-white/40 to-transparent"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "base": "backdrop-blur-xl bg-white/30 border border-white/50 shadow-lg shadow-blue-900/5",
+      "heavy": "backdrop-blur-2xl bg-white/60 border border-white/70 shadow-xl",
+      "interactive": "hover:bg-white/50 transition-all duration-300 ease-out"
+    },
+    "shadows": {
+      "soft": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+      "glow": "shadow-[0_0_20px_rgba(6,182,212,0.3)]",
+      "inner": "shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]"
+    },
+    "radius": {
+      "default": "rounded-2xl",
+      "pill": "rounded-full",
+      "soft": "rounded-3xl"
+    }
+  },
+  "layout": {
+    "container": "max-w-5xl mx-auto px-6 py-12 relative z-10",
+    "grid_strategy": "Bento Grid (Mode A) for Dashboard",
+    "spacing": {
+      "section_gap": "gap-8",
+      "item_gap": "gap-4",
+      "internal_padding": "p-6"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-cyan-600 text-white hover:bg-cyan-500 shadow-lg shadow-cyan-500/20 rounded-full px-8 py-3 font-bold tracking-wide transition-all hover:scale-105 active:scale-95",
+      "glass": "backdrop-blur-md bg-white/20 border border-white/40 text-slate-700 hover:bg-white/40 rounded-full px-6 py-2 transition-all"
+    },
+    "cards": {
+      "todo_item": "group relative overflow-hidden backdrop-blur-md bg-white/40 border border-white/60 rounded-xl p-4 hover:bg-white/60 transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
+      "dashboard_widget": "backdrop-blur-xl bg-white/30 border border-white/50 rounded-3xl p-8 shadow-sm"
+    },
+    "inputs": {
+      "glass_input": "bg-white/50 border-white/60 focus:bg-white/80 focus:border-cyan-400 rounded-xl px-4 py-3 outline-none transition-all placeholder:text-slate-400"
+    }
+  },
+  "motion": {
+    "micro_interactions": [
+      "Hover lift on Todo Items (-translate-y-1)",
+      "Ripple effect on Primary Buttons",
+      "Staggered entrance for list items"
+    ],
+    "transitions": "transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  "3d_scene": {
+    "library": "React Three Fiber (@react-three/fiber, @react-three/drei)",
+    "concept": "Floating Liquid Glass Shapes",
+    "elements": [
+      "TorusKnot or Sphere geometries",
+      "MeshPhysicalMaterial (Transmission: 1, Roughness: 0.1, Thickness: 2, IOR: 1.5)",
+      "Slow rotation animation",
+      "Mouse parallax effect"
+    ],
+    "background_integration": "Fixed position, z-index -1, covering full viewport"
+  },
+  "image_urls": {
+    "textures": [
+      {
+        "url": "https://images.pexels.com/photos/6664375/pexels-photo-6664375.jpeg",
+        "category": "abstract_glass",
+        "description": "Abstract liquid glass blue shapes"
+      },
+      {
+        "url": "https://images.pexels.com/photos/27001753/pexels-photo-27001753.jpeg",
+        "category": "ocean_texture",
+        "description": "Ocean water texture light blue"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. INSTALL DEPENDENCIES: npm install three @types/three @react-three/fiber @react-three/drei framer-motion lucide-react clsx tailwind-merge",
+    "2. SETUP THEME: Update tailwind.config.js to include the custom colors and animations defined above.",
+    "3. CREATE 3D BACKGROUND: Build a 'BackgroundScene.js' component using R3F. It should be subtle and not distract from the content.",
+    "4. BUILD LAYOUT: Create a main layout wrapper that holds the 3D background and the main content container.",
+    "5. IMPLEMENT COMPONENTS: Build 'GlassCard', 'GlassButton', 'TodoItem' using the visual enhancers.",
+    "6. DATA-TESTID: Ensure every interactive element has a data-testid attribute.",
+    "7. NO MOCKING: Implement the actual logic for adding/removing todos using React state (Context API or Zustand recommended for state management).",
+    "8. LIQUID EFFECT: Use the 'MeshPhysicalMaterial' in R3F to achieve the liquid glass look for 3D objects."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid generic 'AI slop' designs. Be bold with spacing and transparency.",
+    "Do not use solid white backgrounds for containers; always use semi-transparent whites with blur.",
+    "Ensure text contrast is sufficient on glass backgrounds (use slate-800 or darker for text).",
+    "Use 'sonner' for notifications.",
+    "Do not use 'Inter' for headings; use 'Outfit' or similar geometric sans."
+  ]
+}
